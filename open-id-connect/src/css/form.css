@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    margin: 20px 0 0 0;
+    text-align: center;
+    color: #757575;
+}
+
+h3 {
+    margin: 0 0 30px 0;
+    padding: 0;
+    text-align: center;
+    color: #BDBDBD;
+    font-weight: lighter;
+}
+
+/* initial style */
+form {
+    height: 70px;
+    margin: 0 auto;
+    max-width: 350px;
+    position: relative;
+    margin-top: 100px;
+}
+
+input {
+    bottom: 0;
+    color: #888;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 2em;
+    position: absolute;
+    background: transparent;
+    transition: all 0.1s ease-in-out;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+label {
+    bottom: 10px;
+    color: #E0E0E0;
+    font-size: 20px;
+    position: absolute;
+    pointer-events: none;
+    transition: 0.1s ease-in-out;
+}
+
+.bar {
+    bottom: 2px;
+    width: 100%;
+    position: absolute; 
+}
+
+input.filled {
+    border-bottom: 1px solid #2196F3;
+}
+input:focus ~ label, input.filled ~ label {
+    bottom: 55px;
+    color: #2196F3;
+    font-size: 16px;
+}
+
+.bar:before, .bar:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background: #2196F3;
+    transition: all 0.2s ease-in-out;
+}
+.bar:before {
+    left: 50%;
+}
+.bar:after {
+    right: 50%;
+}
+
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+}
+input:valid {
+    border-bottom: 1px solid #00E676;
+}
+input:valid ~ .bar:before, input:valid ~ .bar:after {
+    background: #00E676 !important;
+}
+input:valid ~ label {
+    color: #00E676;
+}
+
+button{
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+}
+
+
+/*****/
+.bs-dark.navbar-inverse {
+  background-color: #222;
+  border-color: #080808;
+}
+.bs-dark .navbar-img {padding:5px 6px !important;}
+.bs-dark .navbar-img img {width:40px;}
+.bs-dark .dropdown-menu {
+  min-width: 200px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.bs-dark .dropdown-menu .divider {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+.bs-dark .dropdown-menu > li > a {
+  padding: 6px 20px;
+  color: rgba(255,255,255,0.80);
+}
+.bs-dark .dropdown-menu > li > a:hover,
+.bs-dark .dropdown-menu > li > a:focus {
+  color: rgba(255,255,255,0.70);
+  text-decoration: none;
+  background-color: transparent;
+}
+.bs-dark .dropdown-menu > .active > a,
+.bs-dark .dropdown-menu > .active > a:hover,
+.bs-dark .dropdown-menu > .active > a:focus {
+  color: rgba(255,255,255,0.70);
+  text-decoration: none;
+  background-color: transparent;
+  outline: 0;
+}
+
+.bs-dark .navbar-form {
+  margin:0;
+  margin-top: 5px;
+  padding:8px 0px;
+}
+ 
+.bs-dark .navbar-form .search-box {
+  border:0px;
+  height:35px;
+  outline: none;
+  width:320px;
+  padding-right: 3px;
+  padding-left: 15px;
+  margin:4px;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  border-radius: 22px;
+}
+ 
+.bs-dark .navbar-form button {
+  border: 0;
+  background: none;
+  padding: 2px 5px;
+  margin-top: 2px;
+  position: relative;
+  left: -34px;
+  margin-bottom: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+ 
+.bs-dark .search-box:focus + button {
+  z-index: 3;   
+}
+
+@media (min-width: 768px) {
+    .bs-dark .dropdown:hover {background-color: #000;}
+	.bs-dark .dropdown:hover .dropdown-menu {
+	  display: block;
+	}
+	.bs-dark .navbar-form {
+	  padding:0px;
+	}	
+	.bs-dark .navbar-form .search-box {
+	  width:260px;
+	  height:32px;
+	}
+
+}
+
+.header{
+    height: 81px;
+    background-color: #f79c13;
+    box-shadow: 1px 4px 5px #888888;
+}
+.header-label{
+    position: relative;
+    margin-left: 35px;
+    margin-top: 33px;
+    color: #f8f9fa;
+    font-weight: bolder;
+    font-size: x-large;
+}
+.card {
+    top: 125px;
+    height: auto;
+}
+.card-title{
+    margin-top: 14px !important;
+}
+.card-block{
+    padding: 30px;
+}
+.token{
+    font-size: xx-large;
+}
+
+.id_token{
+    font-size: x-large;
+}
+
+
+.logout{
+    float: right;
+    margin-top: 22px;
+    font-size: x-large;
+    color: whitesmoke !important;
+    cursor: pointer;
+}
