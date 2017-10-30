@@ -17,5 +17,7 @@ To run this project please follow the setting up:
 1.Clone the project.
 2.Navigate inside open-id-connect folder.
 3.Enter command: npm install.
-4.Navigate to url:http://localhost:8081
-5.Done
+4.Navigate to src folder.
+5.Enter:node login.js
+6.Navigate to url:http://localhost:8081
+7.Done
