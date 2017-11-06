@@ -2,11 +2,13 @@ var app = angular.module("profile", []);
 app.controller('profileController', function($scope) {
      var url = window.location.href; 
      var string = url.split("&");
-     var id_token = JSON.parse(JSON.stringify(string[2]));
+     var id_token = JSON.parse(JSON.stringify(string[1]));
      id_token = id_token.replace("id_token=","");
      id_token = id_token.split('.');
-     var access_token =JSON.parse(JSON.stringify(string[3]));
-     access_token=access_token.replace('access_token=','');
+     var access_token =JSON.parse(JSON.stringify(string[0]));
+     access_token = access_token.split('#');
+     access_token = access_token[1];
+     access_token=access_token.replace('access_token=',''); 
      id_token=atob(id_token[1]);
      $scope.data = id_token;
      id_token=JSON.parse(id_token);
