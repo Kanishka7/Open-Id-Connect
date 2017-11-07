@@ -22,8 +22,9 @@ app.controller('profileController', function($scope,$http) {
                 var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
                 document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
             }
-         window.location.href="http://localhost:8081/login"
+        window.location.href="http://localhost:8081/login";
      }
+     
      $scope.invoke=function(){
         $(function(){
             $('#myModal').modal('show');
@@ -35,15 +36,13 @@ app.controller('profileController', function($scope,$http) {
             method: 'GET',
             url: 'http://10.100.1.192:8081/curl?token='+access_token+"&url="+$scope.api,
         }).then(function successCallback(response) {
-            console.log("Response ------ "+response)
-
+            $scope.response_body = response;
         }, function errorCallback(response) {
             if(response.status = 401){ 
-                console.log("Unauthorized")
+                alert("Unauthorized");
             }
         });
-     }
-
+    }
 });
 app.directive("header", function() {
     return {
@@ -60,6 +59,10 @@ app.directive("header", function() {
 }).directive("invoke", function() {
     return {
         template : '<button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="call()">Call</button>'
+    };
+}).directive("resbody", function() {
+    return {
+        template : '<p class="card-text token text-center">{{response_body}}</p>'
     };
 });
 

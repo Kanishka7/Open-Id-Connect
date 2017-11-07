@@ -23,15 +23,10 @@ app.get('/store', function (req, res) {
 });
 
 app.get('/curl', function (req, res) {
-    //res.sendFile(path.join(__dirname + '/view/test.html'));
     var token = req.query.token;
     var url = req.query.url;
-    console.log("got----->"+url);
     var command = "curl -X GET --header 'Accept: application/json' --header 'Authorization: Bearer "+token+"'"+" 'https://"+url.split('//')[1]+"' -k";
-    console.log("got----->"+command);  
     child = exec(command, function(error, stdout, stderr){
-        console.log('stdout: ' + stdout);
-        console.log('stderr: ' + stderr);
         if (error !== null)
         {
             console.log('exec error: ' + error);
