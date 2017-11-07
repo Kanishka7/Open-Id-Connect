@@ -230,3 +230,29 @@ button{
     color: whitesmoke !important;
     cursor: pointer;
 }
+
+.invoke{
+    width: 244px;
+    height: 69px;
+    float: none;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-color: #eca434;
+    outline: none;
+    color: white;
+    font-size: x-large;
+}
+.token-row{
+    margin-bottom: 220px;
+}
+
+.modal-body input{
+    overflow: hidden;
+    width: auto;
+    border-bottom: none;
+    position: initial;
+}
+
+.modal-body{
+    height: 100px !important;
+}
