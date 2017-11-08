@@ -31,16 +31,17 @@ app.controller('profileController', function($scope,$http) {
         });
      }
 
-     $scope.call = function(){
-        $http({
-            method: 'GET',
-            url: 'http://10.100.1.192:8081/curl?token='+access_token+"&url="+$scope.api,
-        }).then(function successCallback(response) {
-            $scope.response_body = response;
-        }, function errorCallback(response) {
-            if(response.status = 401){ 
-                alert("Unauthorized");
+    $scope.call = function(){
+        $http.get('https://'+$scope.api.split('//')[1], {
+            headers: {
+                "Authorization": 'Bearer '+access_token
             }
+          }).then(function(response){
+            $scope.response_body = response;
+          },function errorCallback(response) {
+                if(response.status = 401){ 
+                    alert("Unauthorized");
+                }
         });
     }
 });
