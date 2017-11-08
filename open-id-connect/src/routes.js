@@ -10,6 +10,7 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
 });
+
 app.use("/js", express.static(__dirname + '/model/'));
 app.use("/styles", express.static(__dirname + '/css/'));
 app.get('/profile', function (req, res) {    
@@ -27,6 +28,7 @@ app.get('/curl', function (req, res) {
     var url = req.query.url;
     var command = "curl -X GET --header 'Accept: application/json' --header 'Authorization: Bearer "+token+"'"+" 'https://"+url.split('//')[1]+"' -k";
     child = exec(command, function(error, stdout, stderr){
+        console.log("stdout--"+stdout);
         if (error !== null)
         {
             console.log('exec error: ' + error);
