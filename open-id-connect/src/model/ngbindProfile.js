@@ -32,7 +32,7 @@ app.controller('profileController', function($scope,$http) {
      }
 
     $scope.call = function(){
-        $http.get('https://'+$scope.api.split('//')[1], {
+        $http.get($scope.api, {
             headers: {
                 "Authorization": 'Bearer '+access_token
             }
